@@ -1,0 +1,29 @@
+export function GetData() {
+    return[
+        {
+            name:"quang",
+            img:"https://www.shutterstock.com/image-illustration/treejpg-eps-vector-version-id-260nw-122687560.jpg",
+            price:'200000'
+        },
+        {
+            name:"quang",
+            img:"https://www.shutterstock.com/image-illustration/treejpg-eps-vector-version-id-260nw-122687560.jpg",
+            price:'200000'
+        },
+        {
+            name:"quang",
+            img:"https://www.shutterstock.com/image-illustration/treejpg-eps-vector-version-id-260nw-122687560.jpg",
+            price:'200000'
+        },
+        {
+            name:"quang",
+            img:"https://www.shutterstock.com/image-illustration/treejpg-eps-vector-version-id-260nw-122687560.jpg",
+            price:'200000'
+        },
+        {
+            name:"quang",
+            img:"https://www.shutterstock.com/image-illustration/treejpg-eps-vector-version-id-260nw-122687560.jpg",
+            price:'200000'
+        },
+    ]
+}

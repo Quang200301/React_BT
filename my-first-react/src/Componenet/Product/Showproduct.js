@@ -1,3 +1,6 @@
+
+// Cách 2-------------------------------------------------
+
 import React, { Component } from 'react'
 import { GetData } from './Dataproduct'
 export default class Showproduct extends Component {

@@ -1,99 +1,70 @@
-
-// Cách 1------------------------------------
-
 import { GetData } from "./Dataproduct";
-import React from "react";
-class State extends React.Component {
-    constructor(props){
-        super(props);
-        this.state=({
-            arr:GetData(),
-            product:[],
-            quantity: 0
-        })
-    }
-    componentDidMount(){
-        this.productHome();
-    }
-    productHome = () =>{
-        const arr = GetData();
-        this.setState({
-            product:arr
-            .map((item)=>({
-                img:item.img,
-                name:item.name,
-                loai:item.loai,
-                price:item.price,
-            }))
-        });
+import React, { useState } from "react";
 
-    };
-    productAo =()=>{
-        const arr = GetData();
-        this.setState({
-            product:arr
-            .filter((item)=>item.loai==="Ao")
-            .map((item)=>({
-                img:item.img,
-                name:item.name,
-                loai:item.loai,
-                price:item.price
-            }))
-        });
-    };
-    productQuan =()=>{
-        const arr = GetData();
-        this.setState({
-            product:arr
-            .filter((item)=>item.loai==="Quan")
-            .map((item)=>({
-                img:item.img,
-                name:item.name,
-                loai:item.loai,
-                price:item.price
-            }))
-        });
-    };
-    productGiay =()=>{
-        const arr=GetData();
-        this.setState({
-            product:arr
-            .filter((item)=>item.loai==="Giay")
-            .map((item)=>({
-                img:item.img,
-                name:item.name,
-                loai:item.loai,
-                price:item.price
-            }))
-        });
-    };
-    productbuy=()=>{
-        this.setState((prevState)=>({
-            quantity:prevState.quantity+1
-        }));
-    };
-    render(){
-        return(
-            <div>
-                <button onClick={this.productHome}>HOME</button>
-                <button onClick={this.productAo}>Áo</button>
-                <button onClick={this.productQuan}>Quần</button>
-                <button onClick={this.productGiay}>Giày</button>
-                <div className="ipro">
-                    {this.state.product.map((item)=>(
-                        <div>
-                            <div>
-                                <img src={item.img}/>
-                            </div>
-                            <div>{item.name}</div>
-                            <div>{item.price}</div>
-                            <div><button onClick={this.productbuy}>Buy now</button></div>
-                            <p>Quantity: {this.state.quantity}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        )
-    }
+function State() {
+  const [product, setProduct] = useState([]);
+
+  const productHome = () => {
+    const arr = GetData();
+    setProduct(
+      arr.map((item) => ({
+        name: item.name,
+        img: item.img,
+        price: item.price,
+      }))
+    );
+  };
+
+  const productAo = () => {
+    const arr = GetData();
+    setProduct(
+      arr.filter((item) => item.loai === "Ao").map((item) => ({
+        name: item.name,
+        img: item.img,
+        price: item.price,
+      }))
+    );
+  };
+
+  const productQuan = () => {
+    const arr = GetData();
+    setProduct(
+      arr.filter((item) => item.loai === "Quan").map((item) => ({
+        name: item.name,
+        img: item.img,
+        price: item.price,
+      }))
+    );
+  };
+
+  const productGiay = () => {
+    const arr = GetData();
+    setProduct(
+      arr.filter((item) => item.loai === "Giay").map((item) => ({
+        name: item.name,
+        img: item.img,
+        price: item.price,
+      }))
+    );
+  };
+
+  return (
+    <div>
+      <button onClick={productHome}>HOME</button>
+      <button onClick={productAo}>AO</button>
+      <button onClick={productQuan}>QUAN</button>
+      <button onClick={productGiay}>GIAY</button>
+      <div>
+        {product.map((item) => (
+          <div>
+            <div> <img src = {item.img}/></div>
+            <div>{item.name}</div>
+            <div>{item.price}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
+
 export default State;

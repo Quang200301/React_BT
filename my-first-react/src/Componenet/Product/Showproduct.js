@@ -1,65 +1,59 @@
-
-// Cách 2-------------------------------------------------
-
-import React, { Component } from 'react'
-import { GetData } from './Dataproduct'
-export default class Showproduct extends Component {
-    constructor(props) {
-        super(props)
-        this.state = ({
-            arr: GetData(),
-            Products: []
-        })
+import { GetData } from "./Dataproduct";
+import React from "react";
+class State extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            arr:GetData(),
+            product:[]
+        }
     }
-
-
-    componentDidMount() {
-        this.ProductsHome()
+    componentDidMount(){
+        this.productHome()
     }
-    ProductsHome = () => {
-        const arr = GetData()
+    productHome=()=>{
+        const arr = GetData();
         this.setState({
-            Products: this.state.arr.map((item) => ({
-                name: item.name,
-                image: item.img,
-                price: item.price
+            product:this.state.arr.map((item)=>({
+                name:item.name,
+                img:item.img,
+                price:item.price
             }))
         })
     }
-
-    FillterByType = (loai) => {
+    FillterByType=(loai)=>{
         this.setState({
-            Products: this.state.arr.reduce((rcs, item) => {
-                if (item.loai === loai) {
+            product:this.state.arr.reduce((rcs,item)=>{
+                if(item.loai===loai){
                     rcs.push({
-                        name: item.name,
-                        image: item.img,
-                        price: item.price
+                        name:item.name,
+                        img:item.img,
+                        price:item.price
                     })
                 }
                 return rcs
             },[]),
         })
-
     }
-
-    render() {
-        return (
+    render(){
+        return(
             <div>
-                <button onClick={this.ProductsHome}>Home</button>
-                <button onClick={()=>this.FillterByType('Ao')}>Áo</button>
-                <button onClick={()=>this.FillterByType('Quan')}>Quần</button>
-                <button onClick={()=>this.FillterByType('Giay')}>Giày</button>
-                <div className='ipro'>
-                {this.state.Products.map((item) => (
-                    <div>
-                        <img src={item.image}></img>
-                        <h1>{item.name}</h1>
-                        <p>{item.price}</p>
-                    </div>
-                ))}
+                <button onClick={this.productHome}>HOME</button>
+                <button onClick={()=>this.FillterByType('Ao')}>AO</button>
+                <button onClick={()=>this.FillterByType('Quan')}>QUAN</button>
+                <button onClick={()=>this.FillterByType('Giay')}>GIAY</button>
+                <div className="ipro">
+                    {this.state.product.map((item)=>(
+                        <div>
+                            <div><img src={item.img}/></div>
+                            <div>{item.name}</div>
+                            <div>{item.price}</div>
+                        </div>
+                    ))}
                 </div>
+
             </div>
         )
     }
 }
+export default State;

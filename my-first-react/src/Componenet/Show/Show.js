@@ -5,15 +5,25 @@ function Show(){
   return(
     <div>
       <div>
-        {product.map((item)=>(
-          <div>
-          <div>{item.name}</div>
-          <div><img src={item.img}/></div>
-          <div>{item.price}</div>
-          </div>
+        {product.map(item=>(
+          <Shows
+            name = {item.name}
+            img = {item.img}
+            price = {item.price}
+          />
         ))}
       </div>
     </div>
+  )
+}
+
+function Shows(props) {
+  return (
+  <div>
+    <h3>{props.name}</h3>
+    <div><img src={props.img} alt='anh.tb'/></div>
+    <div>{props.price}</div>
+  </div>
   )
 }
 export default Show;

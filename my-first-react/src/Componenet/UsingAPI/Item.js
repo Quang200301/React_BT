@@ -1,3 +1,4 @@
+// Lỗi --------------
 const Card=(props)=>{
     return(
         <>

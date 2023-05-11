@@ -76,5 +76,31 @@ export function GetData(){
             loai:"Giay",
             price:"150000"
         },
+
+        
+        {
+            name:"Vòng Kim cương",
+            img:"https://cdn.pnj.io/images/detailed/60/gvddddw000048-vong-tay-kim-cuong-vang-trang-14k-pnj-01.png",
+            loai:"Vong",
+            price:"550000"
+        },
+        {
+            name:"Vòng vàng giá rẻ",
+            img:"https://apj.vn/wp-content/uploads/2019/10/mua-vong-tay-gia-re-1.jpg",
+            loai:"Vong",
+            price:"100000"
+        },
+        {
+            name:"Vòng bạc rẻ",
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2hw76DuxYxogGR-C3EnZgoxUZkAbmo0axQ&usqp=CAU",
+            loai:"Vong",
+            price:"150000"
+        },
+        {
+            name:"Dây chuyền nam",
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8RnhD9iu_y0IuuHFP78ZrSBx5Uac7WaJyFw&usqp=CAU",
+            loai:"Vòng",
+            price:"120000"
+        },
     ]
 }

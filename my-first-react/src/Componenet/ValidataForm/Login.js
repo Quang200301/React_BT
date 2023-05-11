@@ -1,7 +1,9 @@
 import { useState } from "react";
 import isEmpty from "validator/lib/isEmpty";
+import { useNavigate} from "react-router-dom";
 import isEmail from "validator/lib/isEmail";
 function Login(){
+    const history=useNavigate();
     const [email,setEmail]=useState('');
     const [pass,setPass]=useState('');
     const [validationMsg,setvalidationMsg]=useState('');
@@ -23,8 +25,10 @@ function Login(){
     }
     const onSubmitLogin=()=>{
         const isvalid=validateAll()
-        if(!isvalid) return
-        alert("successfully") 
+        if(!isvalid) 
+        return 
+        history('quang')
+       
     }
     return(
         <div>

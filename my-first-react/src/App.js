@@ -11,15 +11,17 @@ import { Luc } from './Componenet/HiRouter/Luc';
 import { Quang } from './Componenet/HiRouter/Quang';
 import { News } from './Componenet/HiRouter/News';
 import Login from './Componenet/ValidataForm/Login';
+import Showtt from './Componenet/Show/Shownew';
+import Pro from './Componenet/Product/Showpromax';
 function App() {
   return (
     <div className="App">
-       
-        {/* <Route path='/' element={<Luc></Luc>}></Route>
-        <Route path='quang' element={<Quang></Quang>}></Route> */}
-        {/* <Route path='news' element={<News></News>}></Route> */}
-        <Login/>
-      
+       {/* <Routes>
+        <Route path='/' element={<Login></Login>}></Route>
+        <Route path='/quang' element={<Quang></Quang>}></Route> 
+        <Route path='/news' element={<News></News>}></Route>
+        </Routes> */}
+        <Pro/>
     </div>
   );
 }
